@@ -1,0 +1,23 @@
+{
+  "name": "uop-ams-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "University of Peradeniya Application Management System - Recruitment & Selection API",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/index.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch src/index.js",
+    "seed:demo": "node --no-warnings=ExperimentalWarning scripts/seed-demo.js",
+    "backup": "node --no-warnings=ExperimentalWarning scripts/backup.js",
+    "test": "node --no-warnings=ExperimentalWarning --test --test-concurrency=1 test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.0.13",
+    "pdfkit": "^0.20.2"
+  }
+}
