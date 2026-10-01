@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { h } from '../lib/util.js';
+import { getSetting } from '../db.js';
 import { DOC_CATEGORIES, LABELS, RESULT_CLASSES, PG_TYPES, SLQF_LEVELS, AWARD_TYPES, CIVIL_STATUSES, TITLES, SECTIONS } from '../lib/applications.js';
 
 const r = Router();
@@ -26,6 +27,7 @@ r.get(
       document_categories: DOC_CATEGORIES,
       labels: LABELS,
       options: { result_classes: RESULT_CLASSES, pg_types: PG_TYPES, slqf_levels: SLQF_LEVELS, award_types: AWARD_TYPES, civil_statuses: CIVIL_STATUSES, titles: TITLES },
+      limits: { max_upload_mb: Number(getSetting(db, 'max_upload_mb', '5')) },
       sections: Object.fromEntries(Object.entries(SECTIONS).map(([k, s]) => [k, { label: s.label, single: !!s.single, fixed: s.fixed, cols: s.cols }])),
     });
   }),
