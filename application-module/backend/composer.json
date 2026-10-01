@@ -1,0 +1,5 @@
+{
+  "name": "uop/application-module",
+  "description": "Online application module — autosave drafts, reference numbers, PDF + referee emails",
+  "require": { "php": ">=8.0", "phpmailer/phpmailer": "^6.9" }
+}
