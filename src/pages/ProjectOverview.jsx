@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PageBanner from '../components/Common/PageBanner';
 import { 
   BookOpen, Target, CheckCircle, Calendar, Users, 
   Database, Activity, Award, Heart, Shield, Globe 
@@ -8,19 +9,11 @@ import {
 const ProjectOverview = () => {
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
+      <PageBanner
+        title="Project Overview"
+        subtitle="Grant No: URC 515 · Multi-Disciplinary Research Grant · 2024-2026"
+      />
       <div className="py-12 container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
-        >
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl text-primary-900">
-            Project Overview
-          </h1>
-          <p className="text-xl text-gray-600">
-            Grant No: URC 515 · Multi-Disciplinary Research Grant · 2024-2026
-          </p>
-        </motion.div>
 
         {/* Background */}
         <motion.div

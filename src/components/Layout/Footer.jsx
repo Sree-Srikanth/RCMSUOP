@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
+import ResearchBackground from '../Common/ResearchBackground';
 
 const Footer = () => {
   return (
-    <footer className="pt-12 pb-6 text-white bg-primary-950">
-      <div className="container-custom">
+    <footer className="relative pt-12 pb-6 overflow-hidden text-white border-t-4 bg-primary-950 border-secondary-500">
+      <ResearchBackground opacity={0.12} />
+      <div className="relative container-custom">
         <div className="grid gap-8 mb-8 md:grid-cols-4">
           <div>
             <div className="flex items-center mb-4 space-x-2">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PageBanner from '../components/Common/PageBanner';
 import { 
   LayoutDashboard, // Changed from Layout
   Users, 
@@ -74,19 +75,11 @@ const RCMS = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
+      <PageBanner
+        title="Renal Care Management System (RCMS)"
+        subtitle="Ensemble Machine Learning Based Clinical Decision Support System"
+      />
       <div className="py-12 container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
-        >
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl text-primary-900">
-            Renal Care Management System (RCMS)
-          </h1>
-          <p className="max-w-3xl mx-auto text-xl text-gray-600">
-            Ensemble Machine Learning Based Clinical Decision Support System
-          </p>
-        </motion.div>
 
         {/* System Architecture */}
         <motion.div

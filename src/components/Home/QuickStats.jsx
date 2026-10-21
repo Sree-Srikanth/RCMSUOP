@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ResearchBackground from '../Common/ResearchBackground';
 import { Database, FileText, Activity, BookOpen, Award, Users } from 'lucide-react';
 
 const stats = [
@@ -40,7 +41,7 @@ const QuickStats = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 text-center transition-shadow bg-white shadow-lg rounded-xl hover:shadow-xl"
+              className="p-6 text-center transition-shadow bg-white shadow-lg border-t-4 rounded-xl hover:shadow-xl border-secondary-500"
             >
               <stat.icon className="w-8 h-8 mx-auto mb-3 text-secondary-500" />
               <div className="mb-1 text-2xl font-bold text-primary-900">
@@ -55,9 +56,10 @@ const QuickStats = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="p-6 mt-8 text-center text-white bg-primary-900 rounded-xl"
+          className="p-6 mt-8 text-center text-white bg-maroon-research rounded-xl"
         >
-          <p className="text-lg font-semibold">
+          <ResearchBackground opacity={0.2} />
+          <p className="relative text-lg font-semibold">
             Best Oral Presentation Award · National Health Research Symposium 2025
           </p>
         </motion.div>

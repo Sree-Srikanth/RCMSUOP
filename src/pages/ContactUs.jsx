@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import PageBanner from '../components/Common/PageBanner';
 import { 
   Mail, 
   Phone, 
@@ -37,19 +38,11 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
+      <PageBanner
+        title="Contact Us"
+        subtitle="Get in touch with the research team"
+      />
       <div className="py-12 container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
-        >
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl text-primary-900">
-            Contact Us
-          </h1>
-          <p className="text-xl text-gray-600">
-            Get in touch with the research team
-          </p>
-        </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Contact Information */}

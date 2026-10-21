@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import PageBanner from '../components/Common/PageBanner';
 import { FileText, BookOpen, Award, Calendar, CheckCircle, ChevronRight, ExternalLink } from 'lucide-react';
 
 const ResearchPublications = () => {
@@ -81,19 +82,11 @@ const ResearchPublications = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
+      <PageBanner
+        title="Research & Publications"
+        subtitle="Academic outputs from Grant No: URC 515"
+      />
       <div className="py-12 container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
-        >
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl text-primary-900">
-            Research & Publications
-          </h1>
-          <p className="text-xl text-gray-600">
-            Academic outputs from Grant No: URC 515
-          </p>
-        </motion.div>
 
         {/* Awards Section */}
         <motion.div

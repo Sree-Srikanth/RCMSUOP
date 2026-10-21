@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PageBanner from '../components/Common/PageBanner';
+import ResearchBackground from '../components/Common/ResearchBackground';
 import { 
   Mail, 
   Heart, 
@@ -138,8 +140,9 @@ const ProjectTeam = () => {
       whileHover={{ y: -5 }}
       className="relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
     >
-      {/* Silver to Blue Gradient for all investigators */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-r from-slate-300 via-slate-200 to-blue-400 opacity-90">
+      {/* Maroon research header for all investigators */}
+      <div className="absolute top-0 left-0 right-0 h-32 overflow-hidden bg-gradient-to-r from-primary-950 via-primary-800 to-primary-700">
+        <ResearchBackground opacity={0.35} />
         {isPrincipal && (
           <div className="absolute top-3 right-3 bg-amber-400 text-amber-900 text-xs font-bold px-2 py-1 rounded-full shadow-lg">
             Principal Investigator
@@ -162,7 +165,7 @@ const ProjectTeam = () => {
             />
           </div>
           {/* Icon Badge - Blue */}
-          <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-md">
+          <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-primary-700 rounded-full flex items-center justify-center border-4 border-white shadow-md">
             <member.icon className="w-5 h-5 text-white" />
           </div>
         </div>
@@ -177,9 +180,9 @@ const ProjectTeam = () => {
             e.preventDefault();
             window.location.hash = member.profileLink.substring(1);
           }}
-          className="inline-block group-hover:text-blue-600 transition-colors"
+          className="inline-block group-hover:text-primary-700 transition-colors"
         >
-          <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600">
+          <h3 className="text-xl font-bold text-gray-900 hover:text-primary-700">
             {member.name}
             <ExternalLink className="inline-block w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
@@ -187,7 +190,7 @@ const ProjectTeam = () => {
         
         {/* Title/Position */}
         {isPrincipal && (
-          <p className="mt-1 text-sm font-semibold text-blue-600">{member.title}</p>
+          <p className="mt-1 text-sm font-semibold text-primary-700">{member.title}</p>
         )}
         <p className="mt-1 text-sm text-gray-600">{member.position}</p>
         
@@ -200,7 +203,7 @@ const ProjectTeam = () => {
           {member.expertise.slice(0, 2).map((item, idx) => (
             <span 
               key={idx} 
-              className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-slate-50 to-blue-50 text-blue-700 rounded-full border border-blue-100"
+              className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 rounded-full border border-secondary-200"
             >
               {item}
             </span>
@@ -214,7 +217,7 @@ const ProjectTeam = () => {
 
         {/* Publications */}
         <div className="flex items-center justify-center mt-3 text-xs text-gray-600">
-          <BookOpen className="w-3 h-3 mr-1 text-blue-500" />
+          <BookOpen className="w-3 h-3 mr-1 text-secondary-600" />
           <span>{member.publications}</span>
         </div>
 
@@ -222,14 +225,14 @@ const ProjectTeam = () => {
         <div className="mt-4 pt-4 border-t border-gray-100">
           <a 
             href={`mailto:${member.email}`}
-            className="flex items-center justify-center text-xs text-gray-600 hover:text-blue-600 transition-colors"
+            className="flex items-center justify-center text-xs text-gray-600 hover:text-primary-700 transition-colors"
           >
             <Mail className="w-3 h-3 mr-1" />
             <span className="truncate">{member.email}</span>
           </a>
           <a 
             href={`tel:${member.phone}`}
-            className="flex items-center justify-center mt-1 text-xs text-gray-600 hover:text-blue-600 transition-colors"
+            className="flex items-center justify-center mt-1 text-xs text-gray-600 hover:text-primary-700 transition-colors"
           >
             <Phone className="w-3 h-3 mr-1" />
             <span>{member.phone}</span>
@@ -247,15 +250,15 @@ const ProjectTeam = () => {
       whileHover={{ y: -5 }}
       className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
     >
-      {/* Subtle silver-blue gradient header for assistants */}
-      <div className="h-2 bg-gradient-to-r from-slate-300 to-blue-400"></div>
+      {/* Subtle maroon-gold header for assistants */}
+      <div className="h-2 bg-gradient-to-r from-primary-800 via-secondary-500 to-primary-800"></div>
       
       <div className="p-6">
         <div className="flex items-start space-x-4">
           {/* Circular Image - Reduced size */}
           <div className="flex-shrink-0">
             <div className="relative">
-              <div className="w-20 h-20 rounded-full border-3 border-blue-200 overflow-hidden shadow-md">
+              <div className="w-20 h-20 rounded-full border-3 border-secondary-300 overflow-hidden shadow-md">
                 <img 
                   src={member.image}
                   alt={member.name}
@@ -266,7 +269,7 @@ const ProjectTeam = () => {
                   }}
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center border-3 border-white shadow-md">
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-primary-700 rounded-full flex items-center justify-center border-3 border-white shadow-md">
                 <GraduationCap className="w-3 h-3 text-white" />
               </div>
             </div>
@@ -285,12 +288,12 @@ const ProjectTeam = () => {
                   }}
                   className="inline-block group"
                 >
-                  <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 hover:text-primary-700 transition-colors">
                     {member.name}
                     <ExternalLink className="inline-block w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
                 </a>
-                <p className="text-sm font-medium text-blue-600 mt-1">{member.role}</p>
+                <p className="text-sm font-medium text-primary-700 mt-1">{member.role}</p>
               </div>
             </div>
             
@@ -298,7 +301,7 @@ const ProjectTeam = () => {
             <div className="mt-2 space-y-1">
               {member.period && (
                 <p className="text-xs text-gray-600 flex items-center">
-                  <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></span>
                   {member.period}
                 </p>
               )}
@@ -309,7 +312,7 @@ const ProjectTeam = () => {
                 </p>
               )}
               <p className="text-xs text-gray-600 flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-300 rounded-full mr-2"></span>
+                <span className="w-1.5 h-1.5 bg-secondary-400 rounded-full mr-2"></span>
                 {member.affiliation}
               </p>
             </div>
@@ -317,7 +320,7 @@ const ProjectTeam = () => {
             {/* Expertise Tags - Reduced to text-xs */}
             <div className="flex flex-wrap gap-1 mt-3">
               {member.expertise.map((item, idx) => (
-                <span key={idx} className="px-2 py-1 text-xs bg-gradient-to-r from-slate-50 to-blue-50 text-blue-700 rounded-full font-medium border border-blue-100">
+                <span key={idx} className="px-2 py-1 text-xs bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 rounded-full font-medium border border-secondary-200">
                   {item}
                 </span>
               ))}
@@ -327,7 +330,7 @@ const ProjectTeam = () => {
             <div className="mt-3 pt-3 border-t border-gray-100">
               <a 
                 href={`mailto:${member.email}`}
-                className="inline-flex items-center text-xs text-blue-600 hover:text-blue-700 transition-colors font-medium"
+                className="inline-flex items-center text-xs text-primary-700 hover:text-primary-800 transition-colors font-medium"
               >
                 <Mail className="w-3 h-3 mr-1" />
                 {member.email}
@@ -340,33 +343,20 @@ const ProjectTeam = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="py-12 mt-10 container-custom max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header - Clean without bubbles */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative mb-12 text-center"
-        >
-         <h1 className="mb-4 mt-10 text-4xl font-bold md:text-5xl text-primary-900">
-            Project Team
-          </h1>
-          <div className="flex justify-center mt-4 mb-4">
-            <div className="w-24 h-1 rounded-full bg-gradient-to-r from-slate-400 to-blue-600"></div>
-          </div>
-          <p className="relative text-xl text-gray-600 max-w-3xl mx-auto">
-            Multi-disciplinary expertise from University of Peradeniya
-          </p>
-        </motion.div>
-
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-gray-50 to-white">
+      <PageBanner
+        title="Project Team"
+        subtitle="Multi-disciplinary expertise from University of Peradeniya"
+      />
+      <div className="py-12 container-custom">
         {/* Investigators Section - Two Rows, Three Columns */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="mb-16"
         >
-          <h2 className="flex items-center mb-8 text-3xl font-bold text-slate-800">
-            <Users className="w-8 h-8 mr-3 text-blue-600" />
+          <h2 className="flex items-center mb-8 text-3xl font-bold text-primary-900">
+            <Users className="w-8 h-8 mr-3 text-primary-700" />
             Principal & Co-Investigators
           </h2>
           
@@ -382,8 +372,8 @@ const ProjectTeam = () => {
 
           {/* Investigator Count Badge */}
           <div className="flex justify-center mt-8">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-slate-50 to-blue-50 rounded-full border border-blue-100">
-              <span className="text-sm font-medium text-blue-700">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-full border border-secondary-200">
+              <span className="text-sm font-medium text-primary-800">
                 {allInvestigators.length} Investigators • 6 Departments • 5 Faculties
               </span>
             </div>
@@ -397,8 +387,8 @@ const ProjectTeam = () => {
           transition={{ delay: 0.3 }}
           className="mb-12"
         >
-          <h2 className="flex items-center mb-8 text-3xl font-bold text-slate-800">
-            <GraduationCap className="w-8 h-8 mr-3 text-blue-600" />
+          <h2 className="flex items-center mb-8 text-3xl font-bold text-primary-900">
+            <GraduationCap className="w-8 h-8 mr-3 text-primary-700" />
             Research Assistants
           </h2>
 
@@ -409,17 +399,18 @@ const ProjectTeam = () => {
           </div>
         </motion.div>
 
-        {/* University Note - Silver to Blue Gradient */}
+        {/* University Note - Maroon research background */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="relative p-8 text-center text-white bg-gradient-to-r from-slate-700 via-slate-600 to-blue-700 rounded-2xl overflow-hidden"
+          className="relative p-8 text-center text-white bg-maroon-research rounded-2xl"
         >
+          <ResearchBackground opacity={0.25} />
           <div className="relative">
             <div className="flex items-center justify-center mb-4">
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Award className="w-8 h-8 text-blue-200" />
+                <Award className="w-8 h-8 text-secondary-300" />
               </div>
             </div>
             <p className="text-2xl font-bold mb-2">
@@ -433,20 +424,20 @@ const ProjectTeam = () => {
 
         {/* Quick Stats - Silver/Blue Theme */}
         <div className="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
-          <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-blue-100 hover:shadow-md transition-shadow">
-            <div className="text-3xl font-bold text-blue-700">{allInvestigators.length}</div>
+          <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-secondary-200 hover:shadow-md transition-shadow">
+            <div className="text-3xl font-bold text-primary-800">{allInvestigators.length}</div>
             <div className="text-sm text-gray-600 mt-1">Investigators</div>
           </div>
           <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-slate-200 hover:shadow-md transition-shadow">
-            <div className="text-3xl font-bold text-blue-700">5</div>
+            <div className="text-3xl font-bold text-primary-800">5</div>
             <div className="text-sm text-gray-600 mt-1">Faculties</div>
           </div>
-          <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-blue-100 hover:shadow-md transition-shadow">
-            <div className="text-3xl font-bold text-blue-700">6</div>
+          <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-secondary-200 hover:shadow-md transition-shadow">
+            <div className="text-3xl font-bold text-primary-800">6</div>
             <div className="text-sm text-gray-600 mt-1">Departments</div>
           </div>
           <div className="bg-white p-5 rounded-xl shadow-sm text-center border border-slate-200 hover:shadow-md transition-shadow">
-            <div className="text-3xl font-bold text-blue-700">2</div>
+            <div className="text-3xl font-bold text-primary-800">2</div>
             <div className="text-sm text-gray-600 mt-1">Research Assistants</div>
           </div>
         </div>

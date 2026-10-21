@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,11 +14,11 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    @apply font-serif text-4xl md:text-5xl font-bold tracking-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply font-serif text-3xl md:text-4xl font-semibold tracking-tight;
   }
 }
 
@@ -37,6 +37,15 @@
 
   .card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6;
+  }
+
+  /* Gold title text, as on University of Peradeniya research banners */
+  .text-gold-gradient {
+    @apply bg-gradient-to-b from-secondary-200 via-secondary-400 to-secondary-600 bg-clip-text text-transparent;
+  }
+
+  .bg-maroon-research {
+    @apply relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800;
   }
 
   .section-padding {

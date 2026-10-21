@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ResearchBackground from '../Common/ResearchBackground';
 import { 
   ArrowRight, 
   Shield, 
@@ -17,8 +18,9 @@ import {
 
 const SystemPreview = () => {
   return (
-    <section className="text-white section-padding bg-gradient-to-br from-primary-900 to-primary-800">
-      <div className="container-custom">
+    <section className="text-white section-padding bg-maroon-research">
+      <ResearchBackground opacity={0.2} />
+      <div className="relative container-custom">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

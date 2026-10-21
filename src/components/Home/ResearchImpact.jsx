@@ -65,7 +65,7 @@ const ResearchImpact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 transition-all bg-gray-50 rounded-xl hover:shadow-lg"
+              className="p-6 transition-all border-l-4 bg-gray-50 rounded-xl hover:shadow-lg border-secondary-500"
             >
               <div className={`inline-flex p-3 rounded-lg ${impact.bgColor} mb-4`}>
                 <impact.icon className={`w-6 h-6 ${impact.color}`} />
